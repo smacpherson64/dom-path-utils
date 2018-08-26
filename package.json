@@ -1,0 +1,29 @@
+{
+  "name": "dom-path-utils",
+  "version": "0.0.1",
+  "description": "DOM Path Utils, help with traversing element ancestors",
+  "main": "dist/dom-path-utils.cjs.js",
+  "module": "dist/dom-path-utils.esm.js",
+  "browser": "dist/dom-path-utils.umd.js",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "test": "jest"
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "babel-core": "6.26.3",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "eslint": "^5.4.0",
+    "eslint-plugin-prettier": "^2.6.2",
+    "jest": "23.5.0",
+    "prettier": "^1.14.2",
+    "regenerator-runtime": "0.12.1",
+    "rollup": "^0.64.0",
+    "rollup-plugin-commonjs": "^9.1.0",
+    "rollup-plugin-node-resolve": "^3.0.0"
+  }
+}
