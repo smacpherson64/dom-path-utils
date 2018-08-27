@@ -1,4 +1,4 @@
-import { getParent } from './getParent';
+import { getParent } from './get-parent';
 
 export const getAncestors = (element, list = []) =>
   element && element !== document

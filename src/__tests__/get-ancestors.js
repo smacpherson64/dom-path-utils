@@ -1,5 +1,5 @@
 import { isElement } from './utils/is-element';
-import { getAncestors } from '../getAncestor';
+import { getAncestors } from '../get-ancestors';
 
 describe('getAncestors', () => {
   test('returns an array of elements', () => {
