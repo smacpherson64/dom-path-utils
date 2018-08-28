@@ -1,5 +1,5 @@
-import { getAncestors } from './getAncestors';
-import { getSelector } from './getSelector';
+import { getAncestors } from './get-ancestors';
+import { getSelector } from './get-selector';
 
 export const getSelectorPath = element =>
   getAncestors(element)
