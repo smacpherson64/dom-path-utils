@@ -16,4 +16,11 @@ describe('getAncestors', () => {
     const results = getAncestors(document.documentElement);
     expect(results[0]).toBe(document.documentElement);
   });
+
+  test('returns the correct order of elements', () => {
+    const results = getAncestors(document.body);
+    expect(results[0]).toBe(document.documentElement);
+    expect(results[1]).toBe(document.body);
+    expect(results.length).toBe(2);
+  });
 });
