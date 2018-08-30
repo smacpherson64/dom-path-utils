@@ -1,6 +1,8 @@
 import { getParent } from './get-parent';
 
-export const getAncestors = (element, list = []) =>
+const _getAncestors = (element, list = []) =>
   element && element !== document
-    ? getAncestors(getParent(element), [element, ...list])
+    ? _getAncestors(getParent(element), [element, ...list])
     : list;
+
+export const getAncestors = element => _getAncestors(element);

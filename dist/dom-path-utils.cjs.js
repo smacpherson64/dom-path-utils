@@ -4,10 +4,12 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 const getParent = element => element.parentElement || element.parentNode;
 
-const getAncestors = (element, list = []) =>
+const _getAncestors = (element, list = []) =>
   element && element !== document
-    ? getAncestors(getParent(element), [element, ...list])
+    ? _getAncestors(getParent(element), [element, ...list])
     : list;
+
+const getAncestors = element => _getAncestors(element);
 
 const getClasses = element =>
   element.classList.length
@@ -15,7 +17,7 @@ const getClasses = element =>
     : '';
 
 const getId = element =>
-  element.id === '' ? `#${element.id}` : element.id;
+  element.id === '' ? element.id : `#${element.id}`;
 
 const getTagName = element => element.tagName.toLowerCase();
 
