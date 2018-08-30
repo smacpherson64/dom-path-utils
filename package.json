@@ -1,6 +1,6 @@
 {
   "name": "dom-path-utils",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "DOM Path Utils, help with traversing element ancestors",
   "main": "dist/dom-path-utils.cjs.js",
   "module": "dist/dom-path-utils.esm.js",
