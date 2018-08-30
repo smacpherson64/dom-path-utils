@@ -28,7 +28,7 @@ getAncestors(element: HTMLElement): HTMLElement[]
 Get all ancestors of an element including detached elements.
 
 #### Examples
-``html```
+```html
   <html>
     <body>
       <div></div>
