@@ -1,8 +1,13 @@
 {
   "name": "dom-path-utils",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "DOM Path Utils, help with traversing element ancestors",
-  "keywords": ["dom", "element", "traverse", "utils"],
+  "keywords": [
+    "dom",
+    "element",
+    "traverse",
+    "utils"
+  ],
   "main": "dist/dom-path-utils.cjs.js",
   "module": "dist/dom-path-utils.esm.js",
   "browser": "dist/dom-path-utils.umd.js",
