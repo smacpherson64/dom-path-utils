@@ -6,9 +6,9 @@ Helper utilties for traversing ancestors in the dom.
 - [Installation](#installation)
 - [Utils](#utils)
   - [`getAncestors`](#getancestors)
+  - [`getClasses`](#getclasses)
+  - [`getId`](#getid)
 - [LICENSE](#license)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Installation
 This module is distributed via [npm][npm] which is bundled with [node][node] and
