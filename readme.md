@@ -76,5 +76,24 @@ Get the classes selectors as a string separated by '.'
   // ".class1.class2.class3"
 ```
 
+### `getId`
+```typescript
+getId(element: HTMLElement): string
+```
+
+Get the id as a string prefixed by '#'
+
+#### Examples
+```html
+  <div id="element-id"></div>
+```
+
+```javascript
+  import { getId } from 'dom-path-utils';
+
+  const id = getId(document.querySelector('div'));
+  // "#element-id"
+```
+
 ## LICENSE
 MIT
