@@ -8,6 +8,10 @@ Helper utilties for traversing ancestors in the dom.
   - [`getAncestors`](#getancestors)
   - [`getClasses`](#getclasses)
   - [`getId`](#getid)
+  - [`getParent`](#getparent)
+  - [`getSelectorPath`](#getselectorpath)
+  - [`getSelector`](#getselector)
+  - [`getTagName`](#gettagname)
 - [LICENSE](#license)
 
 ## Installation
@@ -93,6 +97,115 @@ Get the id as a string prefixed by '#'
 
   const id = getId(document.querySelector('div'));
   // "#element-id"
+```
+
+### `getParent`
+```typescript
+getParent(element: HTMLElement): HTMLElement | null
+```
+
+Get the parent of the current element including detached elements.
+
+#### Examples
+```html
+  <html>
+    <body>
+      <div></div>
+    </body>
+  </html>
+```
+
+##### Part of the Dom
+```javascript
+  import { getParent } from 'dom-path-utils';
+
+  const ancestors = getParent(document.querySelector('div'));
+  // body (References the actual HTMLElement)
+```
+
+##### Detached Elements Example
+```javascript
+    const parent = document.createElement('div');
+    const child = document.createElement('div');
+
+    parent.appendChild(child);
+
+    const results = getParent(child);
+    // div(parent) (References the actual HTMLElement)
+```
+
+### `getSelectorPath`
+```typescript
+getSelectorPath(element: HTMLElement): string
+```
+
+Gets the string representation of the selector path.
+Note: This selector is intended to be a general selector not a fully unique selector, multiple elements may match this selector.
+
+#### Examples
+```html
+  <html>
+    <body id="body-id">
+      <div class="div-class"></div>
+    </body>
+  </html>
+```
+
+##### Part of the Dom
+```javascript
+  import { getSelectorPath } from 'dom-path-utils';
+
+  const ancestors = getSelectorPath(document.querySelector('div'));
+  // "html > body#body-id > div.div-class"
+```
+
+##### Detached Elements Example
+```javascript
+    const parent = document.createElement('div');
+    const child = document.createElement('div');
+
+    parent.appendChild(child);
+
+    const results = getSelectorPath(child);
+    // "div > div"
+```
+
+### `getSelector`
+```typescript
+getSelector(element: HTMLElement): string
+```
+
+Gets the string representation of a specific element.
+
+#### Examples
+```html
+  <div id="div-id" class="div-class"></div>
+```
+
+```javascript
+  import { getSelector } from 'dom-path-utils';
+
+  const selector = getSelector(document.querySelector('div'));
+  // "div#div-id.div-class"
+```
+
+### `getTagName`
+```typescript
+getTagName(element: HTMLElement): string
+```
+
+Get the element tag string in lowercase
+
+#### Examples
+```html
+  <div class="some-class" id="some-id"></div>
+```
+
+```javascript
+  import { getTagName } from 'dom-path-utils';
+
+  const id = getTagName(document.querySelector('div'));
+  // "div"
 ```
 
 ## LICENSE
