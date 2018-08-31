@@ -72,7 +72,7 @@ Get the classes selectors as a string separated by '.'
 ```javascript
   import { getClasses } from 'dom-path-utils';
 
-  const ancestors = getClasses(document.querySelector('div'));
+  const classes = getClasses(document.querySelector('div'));
   // ".class1.class2.class3"
 ```
 
