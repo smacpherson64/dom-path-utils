@@ -57,5 +57,24 @@ Get all ancestors of an element including detached elements.
     // [div(parent), div(child), div(grandchild)] (References the actual HTMLElement)
 ```
 
+### `getClasses`
+```typescript
+getClasses(element: HTMLElement): string
+```
+
+Get the classes selectors as a string separated by '.'
+
+#### Examples
+```html
+  <div class="class1 class2 class3"></div>
+```
+
+```javascript
+  import { getClasses } from 'dom-path-utils';
+
+  const ancestors = getClasses(document.querySelector('div'));
+  // ".class1.class2.class3"
+```
+
 ## LICENSE
 MIT
