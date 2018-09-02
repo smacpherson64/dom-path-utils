@@ -1,7 +1,7 @@
 import { getAncestors } from './get-ancestors';
 import { getSelector } from './get-selector';
 
-export const getSelectorPath = element =>
+export const getSelectorPath = (element, attributes = ['id', 'class']) =>
   getAncestors(element)
-    .map(getSelector)
+    .map(element => getSelector(element, attributes))
     .join(' > ');

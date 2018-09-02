@@ -22,4 +22,20 @@ describe('getSelectorPath', () => {
     const results = getSelectorPath(grandchild);
     expect(results).toBe('div > div > div');
   });
+
+  test('returns the correct results for custom attributes', () => {
+    const parent = document.createElement('div');
+    const child = document.createElement('div');
+    const grandchild = document.createElement('div');
+
+    parent.classList.add('parent');
+    child.setAttribute('data-custom-attribute', 'test');
+    grandchild.id = 'grandchild';
+
+    child.appendChild(grandchild);
+    parent.appendChild(child);
+
+    const results = getSelectorPath(grandchild, ['data-custom-attribute']);
+    expect(results).toBe('div > div[data-custom-attribute="test"] > div');
+  });
 });
