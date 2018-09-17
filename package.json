@@ -1,6 +1,6 @@
 {
   "name": "dom-path-utils",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "DOM Path Utils, help with traversing element ancestors",
   "keywords": [
     "dom",
@@ -9,8 +9,8 @@
     "utils"
   ],
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/smacpherson64/dom-path-utils.git"
+    "type": "git",
+    "url": "https://github.com/smacpherson64/dom-path-utils.git"
   },
   "license": "MIT",
   "main": "dist/dom-path-utils.cjs.js",
