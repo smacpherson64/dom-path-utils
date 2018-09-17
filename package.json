@@ -8,6 +8,11 @@
     "traverse",
     "utils"
   ],
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/smacpherson64/dom-path-utils.git"
+  },
+  "license": "MIT",
   "main": "dist/dom-path-utils.cjs.js",
   "module": "dist/dom-path-utils.esm.js",
   "browser": "dist/dom-path-utils.umd.js",
