@@ -1,6 +1,6 @@
 {
   "name": "dom-path-utils",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "DOM Path Utils, help with traversing element ancestors",
   "keywords": [
     "dom",

@@ -1,8 +1,8 @@
 const getParent = element => element.parentElement || element.parentNode;
 
-const _getAncestors = (element, list = []) =>
+const _getAncestors = (element, list = [], document = element.ownerDocument) =>
   element && element !== document
-    ? _getAncestors(getParent(element), [element, ...list])
+    ? _getAncestors(getParent(element), [element, ...list], document)
     : list;
 
 const getAncestors = element => _getAncestors(element);
@@ -17,12 +17,33 @@ const getId = element =>
 
 const getTagName = element => element.tagName.toLowerCase();
 
-const getSelector = element =>
-  `${getTagName(element)}${getId(element)}${getClasses(element)}`;
+const getAttribute = (attribute, element) =>
+  element.getAttribute(attribute) === null
+    ? ''
+    : `[${attribute}="${element.getAttribute(attribute)}"]`;
 
-const getSelectorPath = element =>
+const getSelector = (element, attributes = ['id', 'class']) => {
+  const base = getTagName(element);
+
+  if (Array.isArray(attributes) === false || attributes.length === 0) {
+    return base;
+  }
+
+  return attributes.reduce((acc, attribute) => {
+    switch (attribute) {
+      case 'id':
+        return `${acc}${getId(element)}`;
+      case 'class':
+        return `${acc}${getClasses(element)}`;
+      default:
+        return `${acc}${getAttribute(attribute, element)}`;
+    }
+  }, base);
+};
+
+const getSelectorPath = (element, attributes = ['id', 'class']) =>
   getAncestors(element)
-    .map(getSelector)
+    .map(element => getSelector(element, attributes))
     .join(' > ');
 
 export { getAncestors, getClasses, getId, getParent, getSelector, getSelectorPath, getTagName };
